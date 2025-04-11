@@ -1,0 +1,12 @@
+---
+title: "Utopia"
+subtitle: "Jardim de Ideias"
+author: "Gustavo Eidt"
+date: last-modified
+date-format: "DD [de] MMMM [de] YYYY"
+cover-image: cover.jpg
+favicon: favicon.jpg
+lang: pt
+---
+
+Site em construção...
