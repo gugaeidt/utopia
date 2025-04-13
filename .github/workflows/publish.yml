@@ -2,23 +2,26 @@ on:
   workflow_dispatch:
   push:
     branches: main
-
 name: Quarto Publish
-
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4 
-
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         
       - name: Install R
         uses: r-lib/actions/setup-r@v2
         with:
-          r-version: '4.4.3'
+          r-version: '4.5.0'
+      
+      # Add system dependencies before renv setup
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev
       
       - name: Install R Dependencies 
         uses: r-lib/actions/setup-renv@v2
