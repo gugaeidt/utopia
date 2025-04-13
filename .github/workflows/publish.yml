@@ -17,11 +17,17 @@ jobs:
         with:
           r-version: '4.5.0'
       
-      # Add system dependencies before renv setup
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev
+          sudo apt-get install -y \
+            libcurl4-openssl-dev \
+            libssl-dev \
+            libxml2-dev \
+            libfontconfig1-dev \
+            libharfbuzz-dev \
+            libfribidi-dev \
+            libcairo2-dev
       
       - name: Install R Dependencies 
         uses: r-lib/actions/setup-renv@v2
