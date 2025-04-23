@@ -2,13 +2,16 @@ on:
   workflow_dispatch:
   push:
     branches: main
-name: Quarto Publish
+name: Quarto Publish to GitHub Pages
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Check out repository
         uses: actions/checkout@v4 
+        
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         
@@ -34,8 +37,10 @@ jobs:
         with:
           cache-version: 1
       
-      - name: Render and Publish
-        uses: quarto-dev/quarto-actions/publish@v2
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+        
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          target: quarto-pub
-          QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}
+          folder: _site
