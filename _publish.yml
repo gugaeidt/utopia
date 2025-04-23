@@ -1,4 +1,3 @@
 - source: project
-  quarto-pub:
-    - id: 772c637b-9029-4f59-9e0f-43bb1fb62617
-      url: 'https://eidt.quarto.pub/utopia'
+  github-pages: 
+    - url: https://gugaeidt.github.io/utopia/
