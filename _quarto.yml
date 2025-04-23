@@ -23,5 +23,5 @@ execute:
     
 bibliography: references.bib
 
-editor: visual
+editor: source
 
