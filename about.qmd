@@ -1,5 +1,0 @@
----
-title: "Sobre"
----
-
-Site em construção...
