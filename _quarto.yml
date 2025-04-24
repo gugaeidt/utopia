@@ -7,9 +7,12 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - hexerei.qmd  
-      - mykes.qmd
-      - about.qmd
+      - href: hexerei.qmd
+        text: Hex.Brau.
+      - href: mykes.qmd
+        text: Mykes
+      - href: about.qmd
+        text: Sobre
       
 lang: pt
 
