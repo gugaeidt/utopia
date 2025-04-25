@@ -8,6 +8,7 @@ website:
       - href: index.qmd
         text: Home
       - mykes.qmd
+      - hexbrau.qmd
       - about.qmd
       
 lang: pt
@@ -17,6 +18,7 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    toc-depth: 2
     
 execute:
   freeze: auto
