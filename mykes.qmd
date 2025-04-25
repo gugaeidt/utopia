@@ -7,6 +7,7 @@ Site em construção...
 ```{r setup, include=FALSE, echo=FALSE}
 library(flextable)
 library(magrittr)
+library(renv)
 ```
 
 ## Projeto Kultur
@@ -21,13 +22,14 @@ Conforme a Tabela 1 do artigo publicado na *Food Bioscience*, essa é a identifi
 
 ```{r tab1, include=TRUE, echo=FALSE}
 tab1 <- readRDS("rds_objects/tab1.rds")
-flextable(tab1) |>
-        add_footer_lines("* Phenotypically identified.") %>% 
-        flextable::width(j = c(2,3), width = c(4,6), unit = "cm") %>%  
-        line_spacing(space = 0.75, part = "body") %>% 
-        italic(j=c(1, 3), part = "body") %>% 
-        theme_vanilla()
 
+tab1 |> 
+        flextable() |> 
+        add_footer_lines("* Phenotypically identified.") |> 
+        width(j = c(2,3), width = c(4,6), unit = "cm") |>   
+        line_spacing(space = 0.75, part = "body") |> 
+        italic(j=c(1, 3), part = "body") |> 
+        theme_vanilla()
 ```
 
 Entre esses micro-organismos fermentativos existe uma relação de parentesco evolutivo. Para ilustrar melhor tal relação veja a árvore filogenética abaixo.
